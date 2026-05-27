@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Biblia</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f1ea;
+      color:#333;
+      line-height:1.6;
+    }
+
+    header{
+      background:#5b3a29;
+      color:white;
+      padding:40px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    nav{
+      background:#3d281d;
+      padding:15px;
+      text-align:center;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ffd27f;
+    }
+
+    .hero{
+      padding:60px 20px;
+      text-align:center;
+      background:white;
+    }
+
+    .hero h2{
+      font-size:2rem;
+      margin-bottom:20px;
+      color:#5b3a29;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:1.1rem;
+    }
+
+    .cards{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+      padding:40px 20px;
+    }
+
+    .card{
+      background:white;
+      width:300px;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      color:#5b3a29;
+      margin-bottom:10px;
+    }
+
+    .verse-section{
+      text-align:center;
+      padding:50px 20px;
+      background:#ede4d3;
+    }
+
+    .verse-box{
+      background:white;
+      max-width:700px;
+      margin:auto;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .verse{
+      font-size:1.3rem;
+      margin-bottom:20px;
+      font-style:italic;
+    }
+
+    button{
+      background:#5b3a29;
+      color:white;
+      border:none;
+      padding:12px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:1rem;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#7a4c35;
+    }
+
+    footer{
+      background:#3d281d;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:30px;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:2.2rem;
+      }
+
+      .hero h2{
+        font-size:1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>La Biblia</h1>
+    <p>La palabra de Dios para la humanidad</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Versículos</a>
+    <a href="#">Historias</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Bienvenido</h2>
+    <p>
+      La Biblia contiene enseñanzas, historias y mensajes de esperanza.
+      Explora algunos versículos y aprende más sobre este libro sagrado.
+    </p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Antiguo Testamento</h3>
+      <p>
+        Contiene historias como la creación del mundo, Moisés,
+        David y muchos profetas.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Nuevo Testamento</h3>
+      <p>
+        Habla sobre la vida de Jesús, sus enseñanzas y el inicio
+        del cristianismo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Fe y Esperanza</h3>
+      <p>
+        La Biblia inspira a millones de personas con mensajes de amor,
+        fe y esperanza.
+      </p>
+    </div>
+  </section>
+
+  <section class="verse-section">
+    <div class="verse-box">
+      <p class="verse" id="verse">
+        “Porque de tal manera amó Dios al mundo...” - Juan 3:16
+      </p>
+
+      <button onclick="changeVerse()">
+        Mostrar otro versículo
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Página Bíblica | Hecha con HTML, CSS y JavaScript</p>
+  </footer>
+
+  <script>
+    const verses = [
+      "“Todo lo puedo en Cristo que me fortalece.” - Filipenses 4:13",
+      "“El Señor es mi pastor; nada me faltará.” - Salmos 23:1",
+      "“Porque de tal manera amó Dios al mundo...” - Juan 3:16",
+      "“La fe es la certeza de lo que se espera.” - Hebreos 11:1",
+      "“Ama a tu prójimo como a ti mismo.” - Mateo 22:39"
+    ];
+
+    function changeVerse(){
+      const random = Math.floor(Math.random() * verses.length);
+      document.getElementById("verse").innerText = verses[random];
+    }
+  </script>
+
+</body>
+</html>
